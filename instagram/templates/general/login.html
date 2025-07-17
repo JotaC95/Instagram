@@ -3,11 +3,25 @@
 {% block head_title %}Bienvenido a mi instagram{% endblock head_title %}
 
 {% block page_content %}
-    <div class="container">
+<div class="container">
+    {% load crispy_forms_tags %}
+    {% include "_includes/_message.html" %}
+        <h1>Pagina login</h1>
+            <p>
+                Inicio de sesion
+            </p>
+        
+        <form action="" method="post">
 
-        <h1>Login</h1>
-        <p>
-            Este es el contenido de la pagina Login
-        </p>
-    </div>
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    {{ form.username|as_crispy_field }}
+                    {{ form.password|as_crispy_field }}
+                </div>
+                <button class="btn btn-secondary">SignIn</button>
+            </div>
+        </form>
+        
+</div>
 {% endblock page_content %}

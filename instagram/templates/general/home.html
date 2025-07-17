@@ -3,8 +3,9 @@
 {% block head_title %}Bienvenido a mi instagram{% endblock head_title %}
 
 {% block page_content %}
+{% load crispy_forms_tags %}
     <div class="container">
-
+        {% include "_includes/_message.html" %}
         <h1>Homepage</h1>
         <p>
             Este es el contenido de la pagina home
