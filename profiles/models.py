@@ -13,7 +13,7 @@ class UserProfile(models.Model):
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'
     def __str__(self):
-        return self.username
+        return self.user.username
     
 class Follow(models.Model):
     follower = models.ForeignKey(UserProfile, verbose_name='Quien sigue?', on_delete=models.CASCADE, related_name='follower_set')
